@@ -1,0 +1,13 @@
+<div class="input row justify-content-center" >
+    <input type="text" #task class="col-4 ">
+    <button (click)="add(task.value)">+ ADD</button>
+</div>
+<div  *ngFor="let todo of todos; let i = index" [attr.data-index]="i" class="row justify-content-center">
+    <div class="card col-4">
+        <div class="card-body">
+          <input type="checkbox" (click)="iscomplete()">
+          {{todo}}
+          <button style="float: right;" (click)="deleteTodo(i)">Delete</button>
+        </div>
+      </div>
+</div>
